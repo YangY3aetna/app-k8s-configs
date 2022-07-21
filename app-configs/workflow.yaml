@@ -24,7 +24,7 @@ spec:
         arguments:
           parameters: [{name: message, value: Loading data in Postgres HI_Ref schema}]
       - name: load-data-in-redis
-        depends: "load-data-in-postgres"
+        depends: "validate-postgres-data"
         template: echo
         arguments:
           parameters: [{name: message, value: Loading data in Redis}]
@@ -34,7 +34,7 @@ spec:
         arguments:
           parameters: [{name: message, value: Validating-postgres-data}]
       - name: validating-redis-keys
-        depends: "load-data-in-redis && validate-postgres-data"
+        depends: "load-data-in-redis"
         template: echo
         arguments:
           parameters: [{name: message, value: Validating-redis-keys}]
