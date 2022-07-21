@@ -15,7 +15,7 @@ spec:
       labels:
         app: hello-world
       annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/config-map.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/config-maps.yaml") . | sha256sum }}
     spec:
       containers:
       - name: hello-world
