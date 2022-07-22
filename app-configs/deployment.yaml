@@ -26,5 +26,5 @@ spec:
           protocol: TCP
         resources:
           limits:
-            memory: "2Mi"
+            memory: "6Mi"
             cpu: "100m"
