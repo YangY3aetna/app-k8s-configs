@@ -5,6 +5,8 @@ metadata:
   namespace: app
   labels:
     app: greetings
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 1
   selector:
