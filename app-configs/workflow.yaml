@@ -6,12 +6,12 @@ metadata:
 spec:
   entrypoint: data-load
   spec:
-  must complete in below seconds
+#   must complete in below seconds
   activeDeadlineSeconds: 100
-  keep workflows till below seconds
+#   keep workflows till below seconds
   ttlStrategy:
     secondsAfterCompletion: 200
-  delete all pods as soon as they complete
+#   delete all pods as soon as they complete
   podGC:
     strategy: OnPodCompletion
 
