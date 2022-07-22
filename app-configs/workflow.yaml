@@ -9,11 +9,11 @@ spec:
   # must complete in 8h (28,800 seconds)
   activeDeadlineSeconds: 100
   # keep workflows for 1d (86,400 seconds)
-  # ttlStrategy:
-  #   secondsAfterCompletion: 300
+  ttlStrategy:
+    secondsAfterCompletion: 200
   # delete all pods as soon as they complete
-  podGC:
-    strategy: OnPodCompletion
+  # podGC:
+  #   strategy: OnPodCompletion
 
   templates:
   - name: data-load
@@ -32,12 +32,17 @@ spec:
         depends: "load-data-in-postgres"
         template: echo
         arguments:
-          parameters: [{name: message, value: Validating-postgres-data}]
+          parameters: [{name: message, value: Validating Postgres Data}]
+      - name: place-holder-task
+        depends: "validate-postgres-data"
+        template: echo
+        arguments:
+          parameters: [{name: message, value: run this job after data load in postres}]
       - name: validating-redis-keys
         depends: "load-data-in-redis"
         template: echo
         arguments:
-          parameters: [{name: message, value: Validating-redis-keys}]
+          parameters: [{name: message, value: Validating Redis Keys}]
 
   - name: echo
     inputs:
