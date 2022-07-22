@@ -7,7 +7,7 @@ spec:
   entrypoint: data-load
   spec:
   # must complete in below seconds
-  activeDeadlineSeconds: 100
+#   activeDeadlineSeconds: 100
   # keep workflows till below seconds
 #   ttlStrategy:
 #     secondsAfterCompletion: 200
