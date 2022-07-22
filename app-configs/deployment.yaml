@@ -6,7 +6,7 @@ metadata:
   labels:
     app: greetings
   annotations:
-    reloader.stakater.com/auto: "true"
+    reloader.stakater.com/search: "true"
 spec:
   replicas: 1
   selector:
