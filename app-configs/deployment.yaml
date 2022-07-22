@@ -6,7 +6,6 @@ metadata:
   labels:
     app: greetings
   annotations:
-    reloader.stakater.com/search: "true"
     configmap.reloader.stakater.com/reload: "hackathon"
 spec:
   replicas: 1
