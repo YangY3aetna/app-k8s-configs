@@ -41,7 +41,7 @@ spec:
           parameters: [{name: message, value: run this job after data load in postres}]
       - name: validating-redis-keys
         depends: "load-data-in-redis"
-        template: echo
+        template: echo-failure
         arguments:
           parameters: [{name: message, value: Validating Redis Keys}]
 
@@ -52,6 +52,15 @@ spec:
     container:
       image: alpine:3.7
       command: [echo, "{{inputs.parameters.message}}"]
+      
+      
+  - name: echo-failure
+    inputs:
+      parameters:
+      - name: message
+    container:
+      image: alpine:3.7
+      command: [ech, "{{inputs.parameters.message}}"]
       
   - name: exit-handler
     steps:
