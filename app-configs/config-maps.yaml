@@ -1,8 +1,8 @@
 kind: ConfigMap 
 apiVersion: v1 
 metadata:
-  name: hello-world
+  name: hackathon
   namespace: app
 data:
-  NAME: Ular & Yanwei & Arun Hackathon
+  NAME: Ular & Yanwei & Arun
   TEAM_NAME: Gotham

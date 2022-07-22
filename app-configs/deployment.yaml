@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: hackathon
   namespace: app
   labels:
-    app: hello-world
+    app: greetings
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-world
+      app: greetings
   template:
     metadata:
       labels:
-        app: hello-world
+        app: greetings
     spec:
       containers:
-      - name: hello-world
+      - name: greeting-message
         image: arunsonti/hello-world-springboot-app:2.0
         envFrom:
           - configMapRef:
@@ -24,3 +24,7 @@ spec:
         ports:
         - containerPort: 8080
           protocol: TCP
+        resources:
+          limits:
+            memory: "2Mi"
+            cpu: "100m"
