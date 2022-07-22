@@ -20,7 +20,7 @@ spec:
         image: arunsonti/hello-world-springboot-app:2.0
         envFrom:
           - configMapRef:
-              name: hello-world
+              name: hackathon
         ports:
         - containerPort: 8080
           protocol: TCP
